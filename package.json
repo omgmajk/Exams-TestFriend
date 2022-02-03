@@ -1,0 +1,25 @@
+{
+  "name": "test-mate",
+  "version": "1.0.0",
+  "description": "A portable test management system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omgmajk/Exams-TestMate.git"
+  },
+  "author": "Mike Baeck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omgmajk/Exams-TestMate/issues"
+  },
+  "homepage": "https://github.com/omgmajk/Exams-TestMate#readme",
+  "dependencies": {
+    "alpinejs": "^3.8.1",
+    "better-sqlite3": "^7.5.0",
+    "bulma": "^0.9.3",
+    "express": "^4.17.2"
+  }
+}
