@@ -9,11 +9,13 @@ const lang = "en";
 // Create the web server object as app
 const app = express();
 
-// Serve static frontend and use json requests
+// Serve static frontend with configuration
 app.use(express.static('frontend', {
   dotfiles : 'deny',
   extensions : ['html', 'htm']
 }));
+
+// Use json requests
 app.use(express.json());
 
 // Start web server
