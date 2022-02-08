@@ -4,12 +4,16 @@ const dbDriver = require("better-sqlite3");
 
 // Config
 const port = 80;
+const lang = "en";
 
 // Create the web server object as app
 const app = express();
 
 // Serve static frontend and use json requests
-app.use(express.static('frontend'));
+app.use(express.static('frontend', {
+  dotfiles : 'deny',
+  extensions : ['html', 'htm']
+}));
 app.use(express.json());
 
 // Start web server
