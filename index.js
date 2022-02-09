@@ -12,7 +12,7 @@ const app = express();
 // Serve static frontend with configuration
 app.use(express.static('frontend', {
   dotfiles : 'deny',
-  extensions : ['html', 'htm']
+  extensions : ['html']
 }));
 
 // Use json requests
