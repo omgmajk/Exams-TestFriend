@@ -19,7 +19,6 @@
   "dependencies": {
     "alpinejs": "^3.8.1",
     "better-sqlite3": "^7.5.0",
-    "bulma": "^0.9.3",
     "express": "^4.17.2"
   }
 }
