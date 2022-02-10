@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/omgmajk/Exams-TestMate#readme",
   "dependencies": {
-    "alpinejs": "^3.8.1",
     "better-sqlite3": "^7.5.0",
     "express": "^4.17.2"
   }
