@@ -7,12 +7,13 @@
   <title>Portable Test Management System</title>
   <!-- Imports -->
   <script async src="js/main.js"></script>
-  <script defer src="js/alpine.min.js"></script>
+  <script async src="js/alpine.min.js"></script>
   <link rel="stylesheet" href="css/bulma.css"> <!-- Make sure to change to .min before release. -->
 </head>
 <body>
   <div class="box">
     <h1 class="title">It's working!</h1>
   </div>
+  <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
 </body>
 </html>
