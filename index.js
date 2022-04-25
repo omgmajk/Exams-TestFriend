@@ -4,7 +4,7 @@ const dbDriver = require("better-sqlite3");
 
 // Config
 const port = 80;
-const lang = "en";
+const lang = "en"; // Add support for EN and SV
 
 // Create the web server object as app
 const app = express();
