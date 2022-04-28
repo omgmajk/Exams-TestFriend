@@ -65,6 +65,62 @@ function setRoutesForDb(tableName, type) {
     });
     res.json(result[0] || null);
   });
+
+  // Create a new entry in any table
+  app.post('/api/' + tableName, (req, res) => {
+    let statement = db.prepare(`
+      INSERT INTO ${tableName} (
+        ${Object.keys(req.body).join(", ")}
+      )
+      VALUES (
+        ${Object.keys(req.body).map(x => ":" + x).join(", ")}
+      )
+    `);
+    let result = null;
+    try {
+      result = statement.run(req.body);
+    } catch (error) {
+      result = { error: error + "" }
+    }
+    res.json(result);
+  });
+
+  // Delete a single entry from a table
+  app.delete('/api/' + tableName + '/:id', (req, res) => {
+    let statement = db.prepare(`
+      DELETE FROM ${tableName}
+      WHERE id = :idToDelete
+    `);
+    let idToDelete = req.params.id;
+    let result = statement.run({
+      idToDelete
+    });
+    res.json(result);
+  });
+
+  // Delete all entries from a table
+  app.delete('/api/' + tableName, (req, res) => {
+    let statement = db.prepare(`
+      DELETE FROM ${tableName}`
+    );
+    let result = statement.run();
+    res.json(result);
+  });
+
+  // Put/Change one or more fields in a row
+  app.put('/api/' + tableName + '/:id', (req, res) => {
+    let result = null;
+    try {
+      let statement = db.prepare(`
+        UPDATE ${tableName}
+        SET ${Object.keys(req.body).map(x => x + " = :" + x).join(", ")}
+        WHERE id = :id
+      `);
+    } catch (error) {
+      result = { error: error + "" }
+    }
+    res.json(result);
+  });
 }
 
 // Set up the routes
