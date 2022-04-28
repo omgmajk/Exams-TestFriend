@@ -3,7 +3,7 @@ const express = require('express');
 const dbDriver = require('better-sqlite3');
 
 // Connect to DB
-const db = dbDriver('test.sqlite3');
+const db = dbDriver('db/test.sqlite3');
 
 // Config
 const port = 80;
