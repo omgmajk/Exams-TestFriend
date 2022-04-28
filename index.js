@@ -65,8 +65,10 @@ function setRoutesForDb(tableName, type) {
     });
     res.json(result[0] || null);
   });
-
 }
+
+// Set up the routes
+setupAllRoutes();
 
 // Start web server
 app.listen(port, () => {
