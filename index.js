@@ -39,6 +39,7 @@ function setupAllRoutes() {
   for (let {name, type} of allTablesAndViews) {
     setRoutesForDb(name, type);
   }
+  console.log('All routes (get, post, put, delete) online and can be accessed from /api/');
 }
 
 // Set all routes dynamically and setup REST API
