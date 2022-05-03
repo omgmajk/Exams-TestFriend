@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const cors = process.env.DEV === 'yes' ? require('cors') : null;
-const port = process.env.PORT || 80;
+const port = process.env.DEV === 'yes' ? 3000 : process.env.PORT || 80;
 const dbFile = process.env.DB || 'test.db';
 
 // Connect to DB
