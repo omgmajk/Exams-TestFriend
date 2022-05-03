@@ -1,13 +1,16 @@
 // Imports
 const express = require('express');
 const dbDriver = require('better-sqlite3');
-
-// Connect to DB
-const db = dbDriver('db/test.sqlite3');
+const dotenv = require('dotenv');
 
 // Config
-const port = 80;
-const lang = 'en'; // Add support for EN and SV
+dotenv.config();
+const port = process.env.PORT || 80;
+const lang = process.env.LANG || 'en'; // Unused for now
+const dbFile = process.env.DB || 'test.sqlite3';
+
+// Connect to DB
+const db = dbDriver('db/' + dbFile);
 
 // Create the web server object as app
 const app = express();
