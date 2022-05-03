@@ -16,6 +16,7 @@ const db = dbDriver('db/' + dbFile);
 // Create the web server object as app
 const app = express();
 
+// If we have dev environment, load cors.
 if(cors) {app.use(cors()); console.log('Server loaded with cors allowed.');}
 
 // Serve static frontend with configuration
