@@ -5,15 +5,18 @@ const dotenv = require('dotenv');
 
 // Config
 dotenv.config();
+
+const cors = process.env.DEV === 'yes' ? require('cors') : false;
 const port = process.env.PORT || 80;
-const lang = process.env.LANG || 'en'; // Unused for now
-const dbFile = process.env.DB || 'test.sqlite3';
+const dbFile = process.env.DB || 'test.db';
 
 // Connect to DB
 const db = dbDriver('db/' + dbFile);
 
 // Create the web server object as app
 const app = express();
+
+if(cors) {app.use(cors()); console.log('Server loaded with cors allowed.');}
 
 // Serve static frontend with configuration
 app.use(express.static('frontend', {
