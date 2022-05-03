@@ -58,7 +58,7 @@ function setRoutesForDb(tableName, type) {
   });
 
   // Get a single item from route
-  app.get('/api/' + tableName + ':id', (req, res) => {
+  app.get('/api/' + tableName + '/:id', (req, res) => {
     let searchId = req.params.id;
     let statement = db.prepare(`
       SELECT * FROM ${tableName}
