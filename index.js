@@ -118,7 +118,6 @@ function setRoutesForDb(tableName, type) {
   // Put/Change one or more fields in a row
   app.put('/api/' + tableName + '/:id', (req, res) => {
     let result = null;
-    console.log(req.body);
     try {
       let statement = db.prepare(`
         UPDATE ${tableName}
